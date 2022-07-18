@@ -10,18 +10,12 @@ import org.junit.jupiter.api.Test;
 class CalculoDNITest2 {
 	int[] validaDnis = {};
 	
-//
-//	@Before
-//	public void setUp() throws Exception {
-//
-//		validaDnis = CalculoDNI.introduceDni();
-//	}
 
 	@Test
 	public void testIguales() {
 		validaDnis = CalculoDNI.introduceDni();
 
-		// Vamos a mirar que las letras sean las que corresponden
+		//Miramos que las letras sean las que corresponden
 		assertEquals(CalculoDNI.calculaLetraDni(validaDnis[0]), 'S');
 		assertEquals(CalculoDNI.calculaLetraDni(validaDnis[1]), 'M');
 		assertEquals(CalculoDNI.calculaLetraDni(validaDnis[2]), 'U');
@@ -38,7 +32,7 @@ class CalculoDNITest2 {
 	@Test
 	public void testDiferente() {
 
-		// Vamos a probar que pasaria si metemos una letra diferente
+		//En caso de introducir la letra diferente
 		validaDnis = CalculoDNI.introduceDni();
 		assertNotSame(CalculoDNI.calculaLetraDni(validaDnis[9]), 'B');
 	}
